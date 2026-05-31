@@ -3,12 +3,19 @@ export const site = {
   tagline: "Portal randkowy dla dojrzałych singli 40+",
   url: "https://randki40.pl",
   locale: "pl-PL",
+  twitterHandle: "@randki40",
 } as const;
 
 export const nav = [
   { href: "/", label: "Odkrywaj" },
+  { href: "/randki-po-40", label: "Randki 40+" },
   { href: "/premium", label: "Premium" },
   { href: "/rejestracja", label: "Dołącz" },
+] as const;
+
+export const footerCrossLinks = [
+  { href: "https://randkizone.pl", label: "Randkizone" },
+  { href: "https://towarzyskieanonse.pl", label: "Towarzyskie Anonse" },
 ] as const;
 
 export const pricing = {

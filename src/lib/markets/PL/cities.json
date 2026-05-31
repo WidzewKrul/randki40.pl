@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "geo": "PL",
+    "updated": "2026-05-31",
+    "source": "markets/PL/cities.json",
+    "sync": "scripts/sync-cities.sh"
+  },
+  "tier1": [
+    {
+      "slug": "warszawa",
+      "name": "Warszawa",
+      "voivodeship": "mazowieckie"
+    },
+    {
+      "slug": "krakow",
+      "name": "Kraków",
+      "voivodeship": "małopolskie"
+    },
+    {
+      "slug": "wroclaw",
+      "name": "Wrocław",
+      "voivodeship": "dolnośląskie"
+    },
+    {
+      "slug": "poznan",
+      "name": "Poznań",
+      "voivodeship": "wielkopolskie"
+    },
+    {
+      "slug": "gdansk",
+      "name": "Gdańsk",
+      "voivodeship": "pomorskie"
+    },
+    {
+      "slug": "lodz",
+      "name": "Łódź",
+      "voivodeship": "łódzkie"
+    },
+    {
+      "slug": "katowice",
+      "name": "Katowice",
+      "voivodeship": "śląskie"
+    },
+    {
+      "slug": "lublin",
+      "name": "Lublin",
+      "voivodeship": "lubelskie"
+    },
+    {
+      "slug": "szczecin",
+      "name": "Szczecin",
+      "voivodeship": "zachodniopomorskie"
+    },
+    {
+      "slug": "bydgoszcz",
+      "name": "Bydgoszcz",
+      "voivodeship": "kujawsko-pomorskie"
+    },
+    {
+      "slug": "bialystok",
+      "name": "Białystok",
+      "voivodeship": "podlaskie"
+    },
+    {
+      "slug": "rzeszow",
+      "name": "Rzeszów",
+      "voivodeship": "podkarpackie"
+    },
+    {
+      "slug": "kielce",
+      "name": "Kielce",
+      "voivodeship": "świętokrzyskie"
+    },
+    {
+      "slug": "olsztyn",
+      "name": "Olsztyn",
+      "voivodeship": "warmińsko-mazurskie"
+    },
+    {
+      "slug": "opole",
+      "name": "Opole",
+      "voivodeship": "opolskie"
+    },
+    {
+      "slug": "torun",
+      "name": "Toruń",
+      "voivodeship": "kujawsko-pomorskie"
+    },
+    {
+      "slug": "czestochowa",
+      "name": "Częstochowa",
+      "voivodeship": "śląskie"
+    },
+    {
+      "slug": "zielona-gora",
+      "name": "Zielona Góra",
+      "voivodeship": "lubuskie"
+    }
+  ],
+  "tier2": [],
+  "aliases": {
+    "trojmiasto": "gdansk",
+    "warsaw": "warszawa",
+    "krakow-city": "krakow"
+  }
+}

@@ -9,7 +9,7 @@ const GOAL_LABEL: Record<Profile["goal"], string> = {
 
 export function ProfileCard({ profile }: { profile: Profile }) {
   return (
-    <article className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition hover:shadow-md">
+    <article className="overflow-hidden rounded-2xl border border-line bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <div
         className="relative flex h-44 items-end p-4"
         style={{
@@ -29,13 +29,13 @@ export function ProfileCard({ profile }: { profile: Profile }) {
         </div>
       </div>
       <div className="p-4">
-        <span className="inline-block rounded-full bg-rose-50 px-2.5 py-0.5 text-xs font-medium text-rose-800">
+        <span className="inline-block rounded-full bg-bg-soft px-2.5 py-0.5 text-xs font-medium text-accent">
           {GOAL_LABEL[profile.goal]}
         </span>
-        <p className="mt-2 line-clamp-2 text-sm text-stone-600">{profile.bio}</p>
+        <p className="mt-2 line-clamp-2 text-sm text-muted">{profile.bio}</p>
         <Link
           href="/rejestracja"
-          className="mt-3 block w-full rounded-xl bg-stone-900 py-2.5 text-center text-sm font-semibold text-white hover:bg-stone-800"
+          className="mt-3 block w-full rounded-xl bg-accent py-2.5 text-center text-sm font-semibold text-white transition hover:brightness-110"
         >
           Napisz wiadomość
         </Link>

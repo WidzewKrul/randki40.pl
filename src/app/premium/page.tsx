@@ -1,11 +1,19 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { buildMetadata } from "@/lib/seo";
 import { pricing, site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Premium — plany i cennik",
-  description: "Plany Premium i VIP dla portalu Randki40. Stripe, PLN, anuluj kiedy chcesz.",
-};
+export const metadata = buildMetadata({
+  title: "Premium — plany i cennik Randki40",
+  description: "Plany Premium i VIP dla portalu Randki40. Stripe, PLN, anuluj kiedy chcesz. Odblokuj wiadomości, filtry i boost profilu.",
+  path: "/premium",
+  keywords: [
+    "Randki40 Premium",
+    "portal randkowy Premium",
+    "cennik randki 40+",
+    "randki VIP",
+    "płatność Stripe randki",
+  ],
+});
 
 export default function PremiumPage() {
   const plans = [pricing.premium, pricing.vip, pricing.yearly];

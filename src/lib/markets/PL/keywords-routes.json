@@ -1,0 +1,38 @@
+{
+  "_source": "markets/PL/keywords/KEYWORDS.md TIER 1",
+  "_patterns": {
+    "/masaz": {
+      "site": "randkizone.pl",
+      "pattern": "/masaz/{type}-{city}",
+      "note": "112 podstron: type ∈ erotyczny|tantryczny|nuru|lingam|… + city z cities.json tier1. Hub /masaz bez wildcard.",
+      "hubKeywords": ["masaż erotyczny", "masaż tantryczny", "masaż nuru"]
+    },
+    "/[city]": {
+      "note": "Geo slug z markets/PL/cities.json tier1 — adult: /{city}, portal: /{city}, soft: /pl/{city}"
+    }
+  },
+  "randkizone.pl": {
+    "/": ["portale randkowe", "randki bez rejestracji", "portal randkowy za darmo"],
+    "/masaz": ["masaż erotyczny", "masaż tantryczny", "masaż nuru"],
+    "/m": ["onlyfans polska", "polki onlyfans", "katalog modelek"],
+    "/blog/onlyfans-polska-przewodnik-2026": ["onlyfans polska", "polskie onlyfans"],
+    "/blog/randki-bez-rejestracji-przewodnik": ["randki bez rejestracji", "portal randkowy bez rejestracji"],
+    "/quiz": ["randka bez rejestracji", "portal randkowy bez rejestracji"],
+    "/randki-po-40": ["randki po 40", "randki dojrzałe"],
+    "/rekrutacja": ["praca modelka webcam", "rekrutacja modelek"]
+  },
+  "towarzyskieanonse.pl": {
+    "/": ["anonse towarzyskie", "ogłoszenia towarzyskie", "anonse erotyczne"],
+    "/czat": ["sex czat", "czat erotyczny", "kamerki erotyczne"],
+    "/telefon": ["sex telefon", "gorąca linia"],
+    "/swingers": ["kluby swingers warszawa", "swingers warszawa", "swingers kraków"],
+    "/anonse/agencja": ["agencja towarzyska", "agencja towarzyska kraków", "agencja towarzyska wrocław"],
+    "/[city]": ["anonse towarzyskie {city}", "ogłoszenia towarzyskie {city}"]
+  },
+  "randki40.pl": {
+    "/": ["portal randkowy dla seniorów", "randki po 40", "portale randkowe dla seniorów"],
+    "/randki-po-40": ["randki po 40", "randki dojrzałe", "randki po 50"],
+    "/rejestracja": ["portal randkowy bez rejestracji", "randka bez rejestracji"],
+    "/[city]": ["randki {city}", "portal randkowy {city}"]
+  }
+}
