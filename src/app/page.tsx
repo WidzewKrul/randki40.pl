@@ -76,7 +76,7 @@ export default function HomePage() {
     <>
       <JsonLd data={jsonLd} />
 
-      <HeroShell>
+      <HeroShell image="/img/hero-bg.webp">
         <Badge>40+ · po rozwodzie · poważne intencje</Badge>
         <h1 className="font-display mt-5 text-3xl font-bold tracking-tight text-ink sm:text-5xl">
           Randki dla dojrzałych singli

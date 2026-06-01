@@ -138,10 +138,15 @@ export function Stat({ value, label }: { value: ReactNode; label: string }) {
   );
 }
 
-export function HeroShell({ children }: { children: ReactNode }) {
+export function HeroShell({ children, image }: { children: ReactNode; image?: string }) {
   return (
-    <Section className="overflow-hidden border-b border-line bg-gradient-to-b from-bg-soft to-bg !py-14 sm:!py-20">
-      <div className="hero-dots pointer-events-none absolute inset-0 opacity-40" aria-hidden />
+    <Section className="overflow-hidden border-b border-line !py-14 sm:!py-20" style={image ? { background: "var(--bg)" } : undefined}>
+      {image ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={image} alt="" className="absolute inset-0 size-full object-cover object-center opacity-25" aria-hidden />
+      ) : (
+        <div className="hero-dots pointer-events-none absolute inset-0 opacity-40" aria-hidden />
+      )}
       <Container className="relative z-10">
         <div className="mx-auto max-w-3xl animate-fade-in text-center">{children}</div>
       </Container>
