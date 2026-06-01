@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { IconClose, IconMenu } from "@/components/icons";
-import { footerCrossLinks, nav, site } from "@/lib/site";
+import { nav, site } from "@/lib/site";
 
 function BrandMark() {
   return (
@@ -77,35 +77,15 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-bg-soft py-12">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex flex-col gap-8 sm:flex-row sm:justify-between">
-          <div>
-            <BrandMark />
-            <p className="mt-3 max-w-xs text-sm text-muted">
-              Portal randkowy dla singli 40+. Poważne intencje, dyskrecja, polska obsługa.
-            </p>
-          </div>
-          <nav className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm">
-            {nav.map((item) => (
-              <Link key={item.href} href={item.href} className="text-muted hover:text-accent">
-                {item.label}
-              </Link>
-            ))}
-            <Link href="/regulamin" className="text-muted hover:text-accent">Regulamin</Link>
-            <Link href="/polityka-prywatnosci" className="text-muted hover:text-accent">Prywatność</Link>
+    <footer className="border-t border-line">
+      <div className="mx-auto max-w-6xl px-4 py-5 sm:px-6">
+        <div className="flex flex-col items-center justify-between gap-2 text-xs text-muted sm:flex-row">
+          <p>© 2026 {site.name} · Serwis wyłącznie dla osób pełnoletnich (18+)</p>
+          <nav className="flex gap-5" aria-label="Stopka">
+            <Link href="/regulamin" className="hover:text-accent transition-colors">Regulamin</Link>
+            <Link href="/polityka-prywatnosci" className="hover:text-accent transition-colors">Polityka prywatności</Link>
           </nav>
         </div>
-        <nav className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-sm" aria-label="Portale partnerskie">
-          {footerCrossLinks.map((link) => (
-            <a key={link.href} href={link.href} className="text-muted hover:text-accent" rel="noopener">
-              {link.label}
-            </a>
-          ))}
-        </nav>
-        <p className="mt-8 border-t border-line pt-6 text-xs text-muted">
-          © {new Date().getFullYear()} {site.name} · 18+
-        </p>
       </div>
     </footer>
   );
