@@ -28,6 +28,14 @@ export function getCascadeFallbackUrl(): string {
   return FALLBACK;
 }
 
+export function getBackButtonUrl(): string {
+  return PROFILE.backButton.url;
+}
+
+export function getExitIntentUrl(): string {
+  return PROFILE.exitIntent.url;
+}
+
 function getUsedOffers(): Set<string> {
   if (typeof document === "undefined") return new Set();
   return new Set(
