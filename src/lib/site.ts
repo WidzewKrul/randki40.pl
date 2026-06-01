@@ -1,16 +1,16 @@
 export const site = {
   name: "Randki40",
-  tagline: "Portal randkowy dla dojrzałych singli 40+",
+  tagline: "Portal randkowy dla dojrzałych singli — poznaj kogoś bliskiego po 40",
   url: "https://randki40.pl",
   locale: "pl-PL",
   twitterHandle: "@randki40",
 } as const;
 
 export const nav = [
-  { href: "/", label: "Odkrywaj" },
-  { href: "/randki-po-40", label: "Randki 40+" },
+  { href: "/", label: "Randki" },
+  { href: "/#profile", label: "Profile" },
+  { href: "/randki-po-40", label: "40+" },
   { href: "/premium", label: "Premium" },
-  { href: "/rejestracja", label: "Dołącz" },
 ] as const;
 
 export const footerCrossLinks = [
@@ -19,7 +19,31 @@ export const footerCrossLinks = [
 ] as const;
 
 export const pricing = {
-  premium: { name: "Premium", price: 49, period: "mies.", features: ["Unlimited wiadomości", "Kto Cię polubił", "Filtry zaawansowane"] },
-  vip: { name: "VIP", price: 99, period: "mies.", features: ["Wszystko z Premium", "Boost profilu 2×/mies.", "Priorytet support"] },
-  yearly: { name: "Roczny", price: 499, period: "rok", features: ["VIP przez 12 mies.", "Oszczędzasz 58%", "Anuluj kiedy chcesz"] },
+  standard: {
+    name: "Standard",
+    price: 0,
+    period: "zawsze",
+    features: ["Przeglądanie profili", "Polubienia", "3 wiadomości miesięcznie"],
+    highlighted: false,
+    cta: "Rejestracja gratis",
+    ctaHref: "/rejestracja",
+  },
+  premium: {
+    name: "Premium",
+    price: 49,
+    period: "mies.",
+    features: ["Nieograniczone wiadomości", "Kto Cię polubił", "Filtry zaawansowane", "Priorytet w wynikach"],
+    highlighted: true,
+    cta: "Wybierz Premium",
+    ctaHref: "/rejestracja",
+  },
+  vip: {
+    name: "VIP",
+    price: 99,
+    period: "mies.",
+    features: ["Wszystko z Premium", "Boost profilu 2×/mies.", "Priorytet support", "Odznaka VIP w profilu"],
+    highlighted: false,
+    cta: "Wybierz VIP",
+    ctaHref: "/rejestracja",
+  },
 } as const;

@@ -155,7 +155,7 @@ export function HeroShell({ children, image }: { children: ReactNode; image?: st
 }
 
 export function TrustPills() {
-  const items = ["18+", "Polska obsługa", "Stripe", "Dyskrecja"];
+  const items = ["Darmowe konto", "Poważne intencje", "Dyskrecja", "18+ · Polska obsługa"];
   return (
     <div className="mt-8 flex flex-wrap justify-center gap-2">
       {items.map((t) => (

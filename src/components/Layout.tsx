@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { IconClose, IconMenu } from "@/components/icons";
-import { nav, site } from "@/lib/site";
+import { footerCrossLinks, nav, site } from "@/lib/site";
 
 function BrandMark() {
   return (
@@ -78,13 +78,43 @@ export function Header() {
 export function Footer() {
   return (
     <footer className="border-t border-line">
-      <div className="mx-auto max-w-6xl px-4 py-5 sm:px-6">
-        <div className="flex flex-col items-center justify-between gap-2 text-xs text-muted sm:flex-row">
-          <p>© 2026 {site.name} · Serwis wyłącznie dla osób pełnoletnich (18+)</p>
-          <nav className="flex gap-5" aria-label="Stopka">
-            <Link href="/regulamin" className="hover:text-accent transition-colors">Regulamin</Link>
-            <Link href="/polityka-prywatnosci" className="hover:text-accent transition-colors">Polityka prywatności</Link>
-          </nav>
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+        <div className="mb-6 grid grid-cols-2 gap-4 text-sm sm:grid-cols-4">
+          <div>
+            <p className="mb-2 font-semibold text-ink">Portal</p>
+            <nav className="flex flex-col gap-1.5 text-muted" aria-label="Portal">
+              <Link href="/" className="transition-colors hover:text-accent">Randki 40+</Link>
+              <Link href="/randki-po-40" className="transition-colors hover:text-accent">Randki po 40</Link>
+              <Link href="/randki-po-rozwodzie" className="transition-colors hover:text-accent">Randki po rozwodzie</Link>
+            </nav>
+          </div>
+          <div>
+            <p className="mb-2 font-semibold text-ink">Konto</p>
+            <nav className="flex flex-col gap-1.5 text-muted" aria-label="Konto">
+              <Link href="/rejestracja" className="transition-colors hover:text-accent">Rejestracja</Link>
+              <Link href="/premium" className="transition-colors hover:text-accent">Premium</Link>
+            </nav>
+          </div>
+          <div>
+            <p className="mb-2 font-semibold text-ink">Informacje</p>
+            <nav className="flex flex-col gap-1.5 text-muted" aria-label="Informacje">
+              <Link href="/regulamin" className="transition-colors hover:text-accent">Regulamin</Link>
+              <Link href="/polityka-prywatnosci" className="transition-colors hover:text-accent">Polityka prywatności</Link>
+            </nav>
+          </div>
+          <div>
+            <p className="mb-2 font-semibold text-ink">Inne portale</p>
+            <nav className="flex flex-col gap-1.5 text-muted" aria-label="Inne portale">
+              {footerCrossLinks.map((l) => (
+                <a key={l.href} href={l.href} className="transition-colors hover:text-accent" rel="noopener">
+                  {l.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </div>
+        <div className="border-t border-line pt-4 text-center text-xs text-muted">
+          <p>© 2026 {site.name} · Serwis wyłącznie dla osób pełnoletnich (18+) · Dyskrecja gwarantowana</p>
         </div>
       </div>
     </footer>

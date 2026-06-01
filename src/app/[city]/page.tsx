@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Faq, type FaqItem } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
@@ -23,11 +24,15 @@ function cityFaq(cityName: string): FaqItem[] {
     },
     {
       q: "Czy rejestracja jest darmowa?",
-      a: "Tak. Założenie konta i przeglądanie profili jest bezpłatne. Plany Premium odblokowują wiadomości i zaawansowane filtry.",
+      a: "Tak. Założenie konta i przeglądanie profili jest bezpłatne. Plany Premium odblokowują nieograniczone wiadomości i zaawansowane filtry.",
     },
     {
       q: "Czy portal jest tylko dla osób po 40?",
       a: "Randki40 koncentruje się na singlach 35–55 lat — dojrzałych osobach szukających poważnego kontaktu, bez presji młodzieżowych aplikacji.",
+    },
+    {
+      q: `Czy są tu osoby po rozwodzie z ${cityName}?`,
+      a: `Tak. Randki40 to między innymi portal dla singli po rozwodzie i w separacji — w ${cityName} i w całej Polsce. Profil anonimowy do momentu, gdy sam zdecydujesz.`,
     },
   ];
 }
@@ -38,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!city) return {};
   return buildMetadata({
     title: `Randki 40+ ${city.name} — singli dojrzałych w ${city.name}`,
-    description: `Portal randkowy dla singli 40+ w ${city.name} (${city.region}). Poważne relacje, rozwodzeni, dojrzałe randki — darmowa rejestracja.`,
+    description: `Portal randkowy dla singli 40+ w ${city.name} (${city.region}). Poważne relacje, randki po rozwodzie, dojrzałe randki — darmowa rejestracja.`,
     path: `/${slug}`,
     keywords: [
       `randki 40+ ${city.name}`,
@@ -84,11 +89,17 @@ export default async function CityPage({ params }: Props) {
             Randki 40+ — {city.name}
           </h1>
           <p className="mt-3 max-w-2xl text-muted">
-            Singli w wieku 40+ z {city.name}. {site.name} — bez presji młodzieżowych app.
+            Poznaj dojrzałych singli z {city.name} i okolic. {site.name} — spokojne randkowanie
+            bez presji, z jasnymi intencjami.
           </p>
-          <Button href="/rejestracja" className="mt-6">
-            Dołącz za darmo
-          </Button>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button href="/rejestracja">
+              Dołącz za darmo
+            </Button>
+            <Button href="/premium" variant="secondary">
+              Zobacz plany
+            </Button>
+          </div>
         </Container>
       </Section>
 
@@ -96,13 +107,54 @@ export default async function CityPage({ params }: Props) {
         <Container>
           <SectionHeading
             title={`Profile singli 40+ w ${city.name}`}
+            subtitle={`Dojrzałe osoby szukające prawdziwego kontaktu. Zarejestruj się i zacznij pisać.`}
             center={false}
           />
           <ProfileGrid profiles={profiles} />
         </Container>
       </Section>
 
-      <Section className="border-t border-line bg-bg-soft">
+      {/* Internal linking */}
+      <Section className="border-t border-line bg-bg-soft !py-10">
+        <Container>
+          <SectionHeading
+            title="Więcej o randkowaniu po 40"
+            subtitle="Przydatne strony i poradniki na Randki40.pl."
+            center={false}
+          />
+          <div className="grid gap-4 sm:grid-cols-3">
+            <Link
+              href="/randki-po-40"
+              className="group rounded-2xl border border-line bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
+            >
+              <h3 className="font-bold text-ink group-hover:text-accent">Randki po 40</h3>
+              <p className="mt-1 text-sm text-muted">
+                Poradnik i profile dla singli 35–55 lat w Polsce.
+              </p>
+            </Link>
+            <Link
+              href="/randki-po-rozwodzie"
+              className="group rounded-2xl border border-line bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
+            >
+              <h3 className="font-bold text-ink group-hover:text-accent">Randki po rozwodzie</h3>
+              <p className="mt-1 text-sm text-muted">
+                Portal dla osób, które zaczynają nowy rozdział.
+              </p>
+            </Link>
+            <Link
+              href="/premium"
+              className="group rounded-2xl border border-line bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
+            >
+              <h3 className="font-bold text-ink group-hover:text-accent">Premium</h3>
+              <p className="mt-1 text-sm text-muted">
+                Nieograniczone wiadomości i zaawansowane filtry.
+              </p>
+            </Link>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="border-t border-line">
         <Container>
           <SectionHeading title={`FAQ — randki 40+ ${city.name}`} center={false} />
           <Faq items={faq} />
@@ -111,6 +163,7 @@ export default async function CityPage({ params }: Props) {
 
       <FinalCtaBox
         title={`Poznaj kogoś w ${city.name}`}
+        subtitle="Rejestracja jest bezpłatna. Dołącz do singli 40+ i zacznij rozmawiać."
         ctaLabel="Załóż darmowe konto"
       />
     </>

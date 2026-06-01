@@ -37,7 +37,7 @@ export function ProfileCard({ profile }: { profile: Profile }) {
           href="/rejestracja"
           className="mt-3 block w-full rounded-xl bg-accent py-2.5 text-center text-sm font-semibold text-white transition hover:brightness-110"
         >
-          Napisz wiadomość
+          Wyślij wiadomość
         </Link>
       </div>
     </article>
