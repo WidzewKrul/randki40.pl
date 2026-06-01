@@ -6,6 +6,9 @@ import { AgeGate } from "@/components/AgeGate";
 import { Analytics } from "@/components/Analytics";
 import { CookieConsent } from "@/components/CookieConsent";
 import { JsonLd } from "@/components/JsonLd";
+import { BackButtonScript } from "@/components/BackButtonScript";
+import { ExitIntentPopup } from "@/components/ExitIntentPopup";
+import { getBackButtonUrl, getExitIntentUrl } from "@/lib/offer-router";
 import { site } from "@/lib/site";
 
 const geist = Geist({
@@ -53,6 +56,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <BackButtonScript fallbackUrl={getBackButtonUrl()} />
+        <ExitIntentPopup offerUrl={getExitIntentUrl()} />
         <AgeGate />
         <CookieConsent />
         <Analytics />

@@ -1,131 +1,40 @@
 {
   "_meta": {
-    "version": "1.0.0",
-    "updated": "2026-05-31",
-    "source": "markets/PL/offers.json",
-    "loader": "sites/*/src/lib/offer-router.ts (Sprint 2)",
-    "notes": "Replace PODMIEN URLs before production. Crak Smartlink #3785 — s1 per site."
+    "version": "2.0.0",
+    "updated": "2026-06-01",
+    "source": "CrakRevenue Mixed Smartlink #3788 — affiliate 414705",
+    "notes": "Real URLs active. Tracking: aff_sub=siteId, aff_sub2=channel, aff_sub4=toolId, aff_sub5=smartlinkId"
   },
   "smartlink": {
-    "base": "https://www.crakrevenue.com/pclick/3785",
-    "params": {
-      "s3": "pl",
-      "s4": "{channel}"
-    },
-    "s1ByProfile": {
-      "soft-pl": "site1",
-      "adult-pl": "site2",
-      "portal-pl": "site3"
-    }
+    "base": "https://t.mbjms.com/414705/3788/0",
+    "params": { "target": "listing", "po": "6456", "aff_sub5": "SF_006OG000004lmDN" }
   },
   "soft-pl": {
-    "siteId": "site1",
-    "domain": "randkizone.pl",
-    "cascade": [
-      {
-        "id": "sympatia",
-        "url": "https://PODMIEN-sympatia-affiliate-link.pl",
-        "weight": 1,
-        "type": "soft"
-      },
-      {
-        "id": "edarling",
-        "url": "https://PODMIEN-edarling-affiliate-link.pl",
-        "weight": 2,
-        "type": "soft"
-      },
-      {
-        "id": "crak",
-        "url": "https://www.crakrevenue.com/pclick/3785?s1=site1&s2={page}&s3=pl&s4={channel}",
-        "fallback": true,
-        "type": "smartlink"
-      }
-    ],
-    "tracking": {
-      "cascade": { "s2": "cascade", "s4": "cta" },
-      "exitIntent": { "s2": "exit", "s4": "exitintent" },
-      "backButton": { "s2": "backbtn", "s4": "backbtn" },
-      "quiz": { "s2": "quiz", "s4": "exit" }
-    },
-    "exitIntent": {
-      "url": "https://www.crakrevenue.com/pclick/3785?s1=site1&s2=exit&s3=pl&s4=exitintent"
-    },
-    "backButton": {
-      "url": "https://www.crakrevenue.com/pclick/3785?s1=site1&s2=backbtn&s3=pl&s4=backbtn"
-    },
-    "quiz": {
-      "url": "https://www.crakrevenue.com/pclick/3785?s1=site1&s2=quiz&s3=pl&s4=exit"
-    },
+    "siteId": "site1", "domain": "randkizone.pl",
+    "cascade": [{ "id": "crak", "url": "https://t.mbjms.com/414705/3788/0?target=listing&po=6456&aff_sub5=SF_006OG000004lmDN&aff_sub=site1&aff_sub2=cascade", "fallback": true, "type": "smartlink" }],
+    "tracking": { "cascade": {"s2":"cascade","s4":"cta"}, "exitIntent": {"s2":"exit","s4":"exitintent"}, "backButton": {"s2":"backbtn","s4":"backbtn"}, "quiz": {"s2":"quiz","s4":"exit"} },
+    "exitIntent": { "url": "https://t.mbjms.com/414705/3788/0?target=listing&po=6456&aff_sub5=SF_006OG000004lmDN&aff_sub=site1&aff_sub2=exit" },
+    "backButton": { "url": "https://t.mbjms.com/414705/3788/0?target=listing&po=6456&aff_sub5=SF_006OG000004lmDN&aff_sub=site1&aff_sub2=backbtn" },
+    "quiz": { "url": "https://t.mbjms.com/414705/3788/0?target=listing&po=6456&aff_sub5=SF_006OG000004lmDN&aff_sub=site1&aff_sub2=quiz" },
     "exoClickZone": "ENV:NEXT_PUBLIC_EXOCLICK_ZONE_ID",
     "nordVpn": "ENV:NEXT_PUBLIC_AFF_NORDVPN_URL"
   },
   "adult-pl": {
-    "siteId": "site2",
-    "domain": "towarzyskieanonse.pl",
-    "cascade": [
-      {
-        "id": "livejasmin",
-        "url": "https://PODMIEN-livejasmin-affiliate-link.com",
-        "weight": 1,
-        "type": "cam"
-      },
-      {
-        "id": "streamate",
-        "url": "https://PODMIEN-streamate-affiliate-link.com",
-        "weight": 2,
-        "type": "cam"
-      },
-      {
-        "id": "crak",
-        "url": "https://www.crakrevenue.com/pclick/3785?s1=site2&s2={page}&s3=pl&s4={channel}",
-        "fallback": true,
-        "type": "smartlink"
-      }
-    ],
-    "tracking": {
-      "cascade": { "s2": "cascade", "s4": "cta" },
-      "exitIntent": { "s2": "exit", "s4": "exitintent" },
-      "backButton": { "s2": "backbtn", "s4": "backbtn" },
-      "czat": { "s2": "czat", "s4": "organic" },
-      "telefon": { "s2": "telefon", "s4": "organic" }
-    },
-    "exitIntent": {
-      "url": "https://www.crakrevenue.com/pclick/3785?s1=site2&s2=exit&s3=pl&s4=exitintent"
-    },
-    "backButton": {
-      "url": "https://www.crakrevenue.com/pclick/3785?s1=site2&s2=backbtn&s3=pl&s4=backbtn"
-    },
+    "siteId": "site2", "domain": "towarzyskieanonse.pl",
+    "cascade": [{ "id": "crak", "url": "https://t.mbjms.com/414705/3788/0?target=listing&po=6456&aff_sub5=SF_006OG000004lmDN&aff_sub=site2&aff_sub2=cascade", "fallback": true, "type": "smartlink" }],
+    "tracking": { "cascade": {"s2":"cascade","s4":"cta"}, "exitIntent": {"s2":"exit","s4":"exitintent"}, "backButton": {"s2":"backbtn","s4":"backbtn"}, "czat": {"s2":"czat","s4":"organic"}, "telefon": {"s2":"telefon","s4":"organic"} },
+    "exitIntent": { "url": "https://t.mbjms.com/414705/3788/0?target=listing&po=6456&aff_sub5=SF_006OG000004lmDN&aff_sub=site2&aff_sub2=exit" },
+    "backButton": { "url": "https://t.mbjms.com/414705/3788/0?target=listing&po=6456&aff_sub5=SF_006OG000004lmDN&aff_sub=site2&aff_sub2=backbtn" },
     "camWidget": "ENV:NEXT_PUBLIC_CAM_WIDGET_ID",
     "exoClickZone": "ENV:NEXT_PUBLIC_EXOCLICK_ZONE_ID",
     "nordVpn": "ENV:NEXT_PUBLIC_AFF_NORDVPN_URL"
   },
   "portal-pl": {
-    "siteId": "site3",
-    "domain": "randki40.pl",
-    "cascade": [
-      {
-        "id": "sympatia-senior",
-        "url": "https://PODMIEN-sympatia-senior-affiliate-link.pl",
-        "weight": 1,
-        "type": "soft"
-      },
-      {
-        "id": "edarling",
-        "url": "https://PODMIEN-edarling-affiliate-link.pl",
-        "weight": 2,
-        "type": "soft"
-      },
-      {
-        "id": "crak",
-        "url": "https://www.crakrevenue.com/pclick/3785?s1=site3&s2={page}&s3=pl&s4={channel}",
-        "fallback": true,
-        "type": "smartlink"
-      }
-    ],
-    "tracking": {
-      "cascade": { "s2": "cascade", "s4": "cta" },
-      "rejestracja": { "s2": "rejestracja", "s4": "organic" }
-    },
+    "siteId": "site3", "domain": "randki40.pl",
+    "cascade": [{ "id": "crak", "url": "https://t.mbjms.com/414705/3788/0?target=listing&po=6456&aff_sub5=SF_006OG000004lmDN&aff_sub=site3&aff_sub2=cascade", "fallback": true, "type": "smartlink" }],
+    "tracking": { "cascade": {"s2":"cascade","s4":"cta"}, "rejestracja": {"s2":"rejestracja","s4":"organic"} },
+    "exitIntent": { "url": "https://t.mbjms.com/414705/3788/0?target=listing&po=6456&aff_sub5=SF_006OG000004lmDN&aff_sub=site3&aff_sub2=exit" },
+    "backButton": { "url": "https://t.mbjms.com/414705/3788/0?target=listing&po=6456&aff_sub5=SF_006OG000004lmDN&aff_sub=site3&aff_sub2=backbtn" },
     "stripePremium": "ENV:NEXT_PUBLIC_STRIPE_PREMIUM_URL",
     "stripeVip": "ENV:NEXT_PUBLIC_STRIPE_VIP_URL",
     "espForm": "ENV:NEXT_PUBLIC_ESP_FORM_URL"
